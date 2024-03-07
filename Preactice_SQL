@@ -1,0 +1,21 @@
+a. How many Employees exist in the Pubs database?
+
+b. How many Employees have a middle initial?
+
+c. Based on hire date what is the first and last name of the newest employee?
+
+
+a.SELECT DISTINCT COUNT (*) AS number_employees
+FROM Employee
+
+
+b.SELECT DISTINCT COUNT(*)
+FROM Employee
+WHERE MiddleInitial LIKE '%'
+
+
+c.SELECT FirstName,
+		LastName,
+		Hire_Date
+FROM Employee
+ORDER BY Hire_Date DESC
