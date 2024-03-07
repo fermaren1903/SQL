@@ -1,4 +1,4 @@
-a. How many Employees exist in the Pubs database?
+1-a. How many Employees exist in the Pubs database?
 
 b. How many Employees have a middle initial?
 
@@ -19,3 +19,18 @@ c.SELECT FirstName,
 		Hire_Date
 FROM Employee
 ORDER BY Hire_Date DESC
+
+
+2-a. How many unique Title_id's are in the TitleAuthor Table?
+
+b. Show Title_id by a count of Authors_id. Order by count of Authors_id descending
+
+a.SELECT COUNT(Distinct Title_id) as unique_titleid
+FROM TitleAuthor
+
+
+b.SELECT Title_id,
+	COUNT(Authors_id) as AuthorCNT
+FROM TitleAuthor
+GROUP BY Title_id
+ORDER BY COUNT(Authors_id) DESC
