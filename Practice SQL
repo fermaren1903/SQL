@@ -34,3 +34,49 @@ b.SELECT Title_id,
 FROM TitleAuthor
 GROUP BY Title_id
 ORDER BY COUNT(Authors_id) DESC
+
+
+
+Write a query to return the device IDs that play League of Legends and include in the first time that device played that game in your output.
+
+Order by the oldest to newest time played.
+
+SELECT device_id,
+  MIN(date_played) AS first_time_played
+  FROM devices
+  WHERE game = 'League of Legends'
+  GROUP BY device_id
+  ORDER BY first_time_played;
+
+
+
+If a patient has a BMI of 30 or over they are considered obese.
+
+The calculation for BMI is as follows:
+
+(Formula: weight (lb) / [height (in)]^2 x 703)
+
+Find the patients who are considered "obese" and provide the patient ID and their BMI. Round BMI to 1 decimal point.
+
+
+SELECT patient_id,
+  ROUND((Weight_pounds/(height_inches * height_inches) * 703),1) AS BMI
+  FROM patients
+  HAVING BMI >= 30;
+
+
+
+
+
+Determine the profit margin for each product.
+
+The profit margin is derived by subtracting the Purchase Price from the Sale Price and then applying a 7% tax on that amount.
+
+Present the product name along with its corresponding profit (round to 2 decimal places).
+
+Order products by largest profit to smallest and products alphabetically.
+
+SELECT product_name,
+      ROUND((sales_price - purchase_price), 2) * 0.93 AS profit_margin
+  FROM products
+  ORDER BY profit_margin DESC, product_name ASC;
