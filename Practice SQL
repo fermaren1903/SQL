@@ -80,3 +80,35 @@ SELECT product_name,
       ROUND((sales_price - purchase_price), 2) * 0.93 AS profit_margin
   FROM products
   ORDER BY profit_margin DESC, product_name ASC;
+
+
+
+
+Scouts often go to Amateur Baseball games to find potential players to bring up to the big leagues. They want to categorize the players to determine what skill level they're currently at.
+
+If a player has a batting average of .38 or higher they are a "Great Hitter". If a player has a batting average between .27 and .37 they're "Average". Anything below a .27 is "Below Average"
+
+Return each players ID, Batting Average, and skill level as "skill_level".
+
+SELECT Player_ID, Batting_Average,
+  CASE
+    WHEN Batting_Average > 0.37 THEN 'Great Hitter'
+    WHEN Batting_Average >= 0.27 AND Batting_Average <= 0.37 THEN 'Average'
+    ELSE 'Below Average'
+  END AS Skill_Level
+FROM players;
+
+
+Join these two tables together to return the first name, last name, and state for each person.
+
+If there is no matching employee in the location table the state should be Null for that person.
+
+Order the output alphabetically on their first names.
+
+SELECT first_name,
+    last_name,
+    state
+  FROM employee_name AS en
+  LEFT JOIN employee_location AS el
+  on en.person_id = el.employee_id
+  ORDER BY first_name ASC;
