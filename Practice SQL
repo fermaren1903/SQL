@@ -1,4 +1,4 @@
-1-a. How many Employees exist in the Pubs database?
+How many Employees exist in the Pubs database?
 
 b. How many Employees have a middle initial?
 
@@ -21,13 +21,12 @@ FROM Employee
 ORDER BY Hire_Date DESC
 
 
-2-a. How many unique Title_id's are in the TitleAuthor Table?
+How many unique Title_id's are in the TitleAuthor Table?
 
 b. Show Title_id by a count of Authors_id. Order by count of Authors_id descending
 
 a.SELECT COUNT(Distinct Title_id) as unique_titleid
 FROM TitleAuthor
-
 
 b.SELECT Title_id,
 	COUNT(Authors_id) as AuthorCNT
@@ -38,7 +37,6 @@ ORDER BY COUNT(Authors_id) DESC
 
 
 Write a query to return the device IDs that play League of Legends and include in the first time that device played that game in your output.
-
 Order by the oldest to newest time played.
 
 SELECT device_id,
@@ -51,11 +49,8 @@ SELECT device_id,
 
 
 If a patient has a BMI of 30 or over they are considered obese.
-
 The calculation for BMI is as follows:
-
 (Formula: weight (lb) / [height (in)]^2 x 703)
-
 Find the patients who are considered "obese" and provide the patient ID and their BMI. Round BMI to 1 decimal point.
 
 
@@ -66,14 +61,9 @@ SELECT patient_id,
 
 
 
-
-
 Determine the profit margin for each product.
-
 The profit margin is derived by subtracting the Purchase Price from the Sale Price and then applying a 7% tax on that amount.
-
 Present the product name along with its corresponding profit (round to 2 decimal places).
-
 Order products by largest profit to smallest and products alphabetically.
 
 SELECT product_name,
@@ -85,9 +75,7 @@ SELECT product_name,
 
 
 Scouts often go to Amateur Baseball games to find potential players to bring up to the big leagues. They want to categorize the players to determine what skill level they're currently at.
-
 If a player has a batting average of .38 or higher they are a "Great Hitter". If a player has a batting average between .27 and .37 they're "Average". Anything below a .27 is "Below Average"
-
 Return each players ID, Batting Average, and skill level as "skill_level".
 
 SELECT Player_ID, Batting_Average,
@@ -100,9 +88,7 @@ FROM players;
 
 
 Join these two tables together to return the first name, last name, and state for each person.
-
 If there is no matching employee in the location table the state should be Null for that person.
-
 Order the output alphabetically on their first names.
 
 SELECT first_name,
